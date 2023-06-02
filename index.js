@@ -93,7 +93,12 @@ app.post('/api/users/:_id/exercises', async (req, res) => {
       _id: existingUser._id
     };
     console.log(JSON.stringify(response));
-    res.json(response);
+    res.json(
+      {username: existingUser.username,
+      description: savedExersize.description,
+      duration: savedExersize.duration,
+      date: savedExersize.date.toDateString(),
+      _id: existingUser._id});
   } catch (err) {
     console.log(err);
   }
