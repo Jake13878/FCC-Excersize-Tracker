@@ -92,11 +92,8 @@ app.post('/api/users/:_id/exercises', async (req, res) => {
       date: savedExersize.date.toDateString(),
       _id: existingUser._id
     };
-
     console.log(JSON.stringify(response));
-    res.json({
-      response
-    });
+    res.json(response);
   } catch (err) {
     console.log(err);
   }
